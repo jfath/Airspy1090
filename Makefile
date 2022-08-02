@@ -11,7 +11,8 @@ EXTRACFLAGS=-DHTMLPATH=\"$(SHAREDIR)\"
 endif
 
 ASMFLAGS=-al -march=armv7-a
-CFLAGS=-O2 -mcpu=cortex-a53 -g -Wall -W `pkg-config --cflags libusb-1.0`
+#CFLAGS=-O2 -mcpu=cortex-a53 -g -Wall -W `pkg-config --cflags libusb-1.0`
+CFLAGS=-O2 -g -Wall -W `pkg-config --cflags libusb-1.0` -Wa,-mimplicit-it=thumb
 LIBS=`pkg-config --libs libusb-1.0` -lpthread -lm
 ASM=as
 CC=gcc

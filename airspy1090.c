@@ -29,6 +29,8 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 #include "airspy1090.h"
+tModes Modes;
+
 //
 // ============================= Utility functions ==========================
 //

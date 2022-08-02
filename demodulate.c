@@ -73,7 +73,8 @@ void IfDemodulateArmAsm(volatile unsigned short* pIfIn, volatile unsigned short*
 	"add     r7, r7, r7, ROR#16\n\t"  //@ r7.h = uIF[-4] + uIF[-3] + uIF[-2] + uIF[-1]
                                       //@ r7.l = uIF[-4] + uIF[-3] + uIF[-2] + uIF[-1]
 
-	"sub     r7, r4, LSL#16\n\t"      //@ r7.h -= uIF[-4] = uIF[-3] + uIF[-2] + uIF[-1]
+	"sub     r7, r7, r4, LSL#16\n\t"
+	//"sub     r7, r4, LSL#16\n\t"		//@ r7.h -= uIF[-4] = uIF[-3] + uIF[-2] + uIF[-1]
 		                              //@ r7.l -= 0 = uIF[-4] + uIF[-3] + uIF[-2] + uIF[-1]
 
 	//# uAF input values are the rectified uIF output values from the previous HPF, and therefore have

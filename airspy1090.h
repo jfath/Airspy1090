@@ -335,7 +335,7 @@ typedef struct stFifo16 {
 } tFifo16;
 
 // Program global state
-struct {                               // Internal state
+typedef struct {                               // Internal state
     pthread_t             reader_thread;
 
     pthread_t             IF_thread;
@@ -461,7 +461,9 @@ struct {                               // Internal state
     tAircraft       *pAircraft;
     uint64_t         interactive_last_update; // Last screen update in milliseconds
     time_t           last_cleanup_time;       // Last cleanup time in seconds
-} Modes;
+} tModes;
+
+extern tModes Modes;
 
 // ======================== function declarations =========================
 
